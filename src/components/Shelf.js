@@ -9,11 +9,11 @@ export default function Shelf({ title, shelfValue, books }) {
             <div className="bookshelf-books">
             <ol className="books-grid">
                 {
-                    books.filter( (book) => {
+                    books.filter( (book) => (
                         book.shelf == shelfValue
-                    }).map( book => (
-                        <li>
-                            <Book book={book} key={book.id} />
+                    )).map( book => (
+                        <li key={book.id}>
+                            <Book book={book} />
                         </li>
                     ))
                 }

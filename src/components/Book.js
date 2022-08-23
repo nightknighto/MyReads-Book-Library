@@ -1,7 +1,14 @@
+import { useRef } from "react"
 
-export default function Book({ book }) {
+export default function Book({ book, changeBookShelf }) {
 
     const { shelf, imageLinks, title, authors } = book
+    const selectRef = useRef(null)
+
+    function handleShelfChange() {
+        const shelfValue = selectRef.current.value
+        changeBookShelf(book, shelfValue)
+    }
 
     return (
         <div className="book">
@@ -16,7 +23,7 @@ export default function Book({ book }) {
                 }}
             ></div>
             <div className="book-shelf-changer">
-                <select defaultValue={shelf}>
+                <select ref={selectRef} defaultValue={shelf} onChange={handleShelfChange}>
                     <option value="none" disabled>
                         Move to...
                     </option>

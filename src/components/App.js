@@ -17,6 +17,12 @@ function App() {
     getBooks()
   }, [])
 
+  function changeBookShelf(book, shelf) {
+    let newBooks = [...books]
+    newBooks.find( search => search.id === book.id ).shelf = shelf
+    setBooks(newBooks)
+  }
+
   return (
     <div className="app">
       {showSearchPage ? (
@@ -40,7 +46,7 @@ function App() {
           </div>
         </div>
       ) : (
-        <MainPage books={books} />
+        <MainPage books={books} changeBookShelf={changeBookShelf} />
       )}
     </div>
   );

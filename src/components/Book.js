@@ -19,7 +19,7 @@ export default function Book({ book, changeBookShelf }) {
                 width: 128,
                 height: 193,
                 backgroundImage:
-                    `url('${imageLinks.thumbnail}')`
+                    `url('${imageLinks && (imageLinks.thumbnail || imageLinks.smallThumbnail)}')`
                 }}
             ></div>
             <div className="book-shelf-changer">
@@ -37,7 +37,7 @@ export default function Book({ book, changeBookShelf }) {
             </div>
             </div>
             <div className="book-title">{title}</div>
-            <div className="book-authors">{authors[0]}</div>
+            <div className="book-authors">{authors && authors[0]}</div>
         </div>
     )
 }

@@ -3,16 +3,15 @@ import { useEffect, useState } from "react";
 import * as BooksAPI from '../BooksAPI'
 import MainPage from "./MainPage";
 import SearchPage from "./SearchPage";
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
-  const [showSearchPage, setShowSearchpage] = useState(true);
   const [books, setBooks] = useState([])
 
   useEffect( () => {
 
     async function getBooks() {
       let data = await BooksAPI.getAll()
-      console.log(data)
       setBooks(data);
     }
     getBooks()
@@ -26,11 +25,17 @@ function App() {
 
   return (
     <div className="app">
-      {showSearchPage ? (
-        <SearchPage />
-      ) : (
-        <MainPage books={books} changeBookShelf={changeBookShelf} />
-      )}
+      <Routes>
+        <Route path="/search"
+          element={<SearchPage />}
+        />
+        <Route path="/" exact 
+          element={<MainPage books={books} changeBookShelf={changeBookShelf} />}
+        />
+        <Route path="*"
+          element={<h2>Not Found</h2>}
+        />
+      </Routes>
     </div>
   );
 }

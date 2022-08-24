@@ -20,7 +20,6 @@ export default function SearchBar({ fetchQueryBooks }) {
                 } else {
                     fetchQueryBooks([])
                 }
-                console.log(data)
             }
         }
         fetchResults()

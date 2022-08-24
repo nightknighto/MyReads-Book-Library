@@ -1,6 +1,9 @@
-import { useRef } from "react"
+import { useContext, useRef } from "react"
+import { ChangeBookShelfContext } from "./App"
 
-export default function Book({ book, changeBookShelf }) {
+export default function Book({ book }) {
+
+    const changeBookShelf = useContext(ChangeBookShelfContext)
 
     const { shelf, imageLinks, title, authors } = book
     const selectRef = useRef(null)
@@ -23,8 +26,8 @@ export default function Book({ book, changeBookShelf }) {
                 }}
             ></div>
             <div className="book-shelf-changer">
-                <select ref={selectRef} defaultValue={shelf} onChange={handleShelfChange}>
-                    <option value="none" disabled>
+                <select ref={selectRef} defaultValue={shelf? shelf : "none"} onChange={handleShelfChange}>
+                    <option disabled>
                         Move to...
                     </option>
                     <option value="currentlyReading">

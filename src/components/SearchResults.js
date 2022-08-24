@@ -2,7 +2,6 @@ import Book from "./Book"
 
 export default function SearchResults({ fetchedBooks }) {
 
-    console.log(fetchedBooks)
     return (
         <div className="search-books-results">
             <ol className="books-grid">

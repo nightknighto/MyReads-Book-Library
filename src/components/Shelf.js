@@ -1,6 +1,6 @@
 import Book from "./Book"
 
-export default function Shelf({ title, shelfValue, books, changeBookShelf }) {
+export default function Shelf({ title, shelfValue, books }) {
 
     return (
         
@@ -13,7 +13,7 @@ export default function Shelf({ title, shelfValue, books, changeBookShelf }) {
                         book.shelf == shelfValue
                     )).map( book => (
                         <li key={book.id}>
-                            <Book book={book} changeBookShelf={changeBookShelf} />
+                            <Book book={book} />
                         </li>
                     ))
                 }

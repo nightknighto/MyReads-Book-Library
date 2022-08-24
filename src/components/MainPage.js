@@ -7,7 +7,7 @@ const shelves = [
     {title: "Read", shelfValue: "read"},
 ]
 
-export default function MainPage({ books, changeBookShelf }) {
+export default function MainPage({ books }) {
 
     return (
         
@@ -19,7 +19,7 @@ export default function MainPage({ books, changeBookShelf }) {
                 <div>
                     {
                         shelves.map( ({title, shelfValue}) => (
-                            <Shelf title={title} shelfValue={shelfValue} books={books} key={shelfValue} changeBookShelf={changeBookShelf} />
+                            <Shelf title={title} shelfValue={shelfValue} books={books} key={shelfValue} />
                         ))
                     }
                 </div>

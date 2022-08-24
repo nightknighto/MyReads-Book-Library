@@ -16,8 +16,25 @@ function App() {
       let data = await BooksAPI.getAll()
       setBooks(data);
     }
-    getBooks()
+
+    // if there is stored data, use instead
+    let storedBooks = sessionStorage.getItem('books')
+    if(storedBooks) {
+      try{
+        setBooks(JSON.parse(storedBooks))
+      } catch {
+        getBooks()
+      }
+    } else {
+      getBooks()
+    }
   }, [])
+
+  // store the data in session storage
+  // so that it persists through page refreshes
+  useEffect( () => {
+    sessionStorage.setItem('books', JSON.stringify(books))
+  }, [books])
 
   function changeBookShelf(book, shelf) {
     let newBooks = [...books]

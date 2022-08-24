@@ -12,7 +12,7 @@ export default function SearchBar({ fetchQueryBooks }) {
     useEffect( () => {
         let mounted = true;
 
-        const fetchResults = async () => {
+        async function fetchResults() {
             const data = await BooksAPI.search(text, 20)
             if(mounted) {
                 if(Array.isArray(data)) {
@@ -22,7 +22,9 @@ export default function SearchBar({ fetchQueryBooks }) {
                 }
             }
         }
-        fetchResults()
+
+        if(text) fetchResults()
+        else fetchQueryBooks([])
 
         return () => {
             mounted = false

@@ -10,7 +10,7 @@ export default function Shelf({ title, shelfValue, books }) {
             <ol className="books-grid">
                 {
                     books.filter( (book) => (
-                        book.shelf == shelfValue
+                        book.shelf === shelfValue
                     )).map( book => (
                         <li key={book.id}>
                             <Book book={book} />

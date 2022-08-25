@@ -3,6 +3,8 @@ on: push
 jobs:
   deploy-app:
     runs-on: ubuntu-latest
+    env:
+      CI: "" # Prevents warnings from stopping the deployment
     steps:
       - name: Checkout
         uses: actions/checkout@v3

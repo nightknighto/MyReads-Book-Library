@@ -7,7 +7,7 @@ This is the graduation project for Udacity React Nanodegree scholarship provided
 It is a book library web application made using React, helping users track, organize and discover books to read. Only the styling and theh HTML structure was given in a [template repo](https://github.com/udacity/nd0191-c1-myreads/), and it was my duty to React-ify it, add dynamic behavior and get it up and running.
 
 ## Deployment
-This app is deployed on Github Pages. [[live link (not yet) ]]()
+This app is deployed on Github Pages. [[live link]](https://deadreyo.github.io/MyReads-Book-Library/)
 
 
 ## Features
@@ -17,7 +17,11 @@ This app is deployed on Github Pages. [[live link (not yet) ]]()
 - Search for books via an external API.
 - Add books.
 - Data persists till the end of the session.
+- Automatic deployment to Github Pages on pushing commits.
 
+## Certificate
+
+This scholarship/Nanodegree has been successfully completed. You can view the certificate [here](https://confirm.udacity.com/DMCR9JYD).
   
 
 ## Installation & Development

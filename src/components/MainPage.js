@@ -27,7 +27,8 @@ export default function MainPage({ books }) {
             <OpenSearch />
 
             <center>
-                <form name="contact" netlify>
+                <form name="contact" method="post">
+                    <input type="hidden" name="form-name" value="contact" />
                     <p>
                         <label>Name <input type="text" name="name" /></label>
                     </p>
@@ -39,7 +40,7 @@ export default function MainPage({ books }) {
                     </p>
                 </form>
             </center>
-            
+
         </div>
     )
 }

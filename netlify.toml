@@ -1,0 +1,9 @@
+
+
+[[edge_functions]]
+function = "geolocation"
+path = "/"
+
+[[edge_functions]]
+function = "log"
+path = "/"

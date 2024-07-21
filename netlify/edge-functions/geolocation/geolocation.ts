@@ -1,6 +1,6 @@
 import { Context } from 'https://edge.netlify.com'
 
-export default async (request: Request, context: Context) =>
+export default async (request: Request, context: Context) => {
   // Here's what's available on context.geo
 
   // context: {
@@ -17,7 +17,10 @@ export default async (request: Request, context: Context) =>
   //   }
   // }
 
-  Response.json({
+  console.log(`Request from ${context.geo.city}, ${context.geo.subdivision.code}, ${context.geo.country.code}`);
+
+  return Response.json({
     geo: context.geo,
     header: request.headers.get('x-nf-geo'),
   })
+}

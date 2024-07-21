@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename="/MyReads-Book-Library">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>,

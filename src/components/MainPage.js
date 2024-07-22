@@ -13,7 +13,7 @@ export default function MainPage({ books }) {
         
         <div className="list-books">
             <div className="list-books-title">
-                <h1>MyReads Site</h1>
+                <h1>Ahmed Atwa Site</h1>
             </div>
             <div className="list-books-content">
                 <div>
